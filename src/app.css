@@ -1,0 +1,36 @@
+/* ===== TOKENS: تنها جایی که رنگ/فاصله/اندازه تعریف می‌شود ===== */
+:root{
+  --gold:#c9a24a; --gold-text:#c9a24a; --on-gold:#1b1c21;
+  --bg:#1b1c21; --bg-alt:#23252b;
+  --ink:#f1ead8; --muted:#a7a49a;
+  --line:rgba(201,162,74,.28);
+  --nav-bg:rgba(27,28,33,.92);
+  --font:"Vazirmatn",Tahoma,sans-serif;
+  --radius:4px; --container:1040px;
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px; --space-5:72px;
+  --fs-body:17px; --fs-h2:clamp(26px,4vw,34px); --fs-h1:clamp(42px,8vw,78px);
+  color-scheme:dark light;
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --gold-text:#8a6a1c;
+    --bg:#f7f2e6; --bg-alt:#efe7d3;
+    --ink:#231f16; --muted:#5f594b;
+    --line:rgba(138,106,28,.3);
+    --nav-bg:rgba(247,242,230,.92);
+  }
+}
+@media (min-width:1200px){:root{--container:1120px}}
+
+/* ===== BASE ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-body)/1.9 var(--font);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+ul,ol{list-style:none;padding:0}
+.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--space-3)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
